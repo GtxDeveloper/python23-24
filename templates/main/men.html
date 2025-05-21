@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class=" pt-2 ps-3 pe-3 pb-2">
+        <div class="d-flex flex-column align-items-center">
+            <h6 class="fw-bold">MEN / READY-TO-WEAR</h6>
+            <label class="fs-4">Ready-To-Wear</label>
+        </div>
+        <div class="container my-5">
+            <div class="row row-cols-1 row-cols-md-2 row-cols-lg-4 g-4">
+                {% for product in products %}
+                    <div class="col">
+                        <a class="text-decoration-none" href="{% url 'item' product.id %}">
+                            <div class="card border-0 text-center">
+                                <img src="{{ product.imgUrl.url }}" class="card-img-top rounded-4"
+                                     alt="ProductImg">
+                                <div class="card-body">
+                                    <h6 class="card-title">{{ product.name }}</h6>
+                                    <p class="fw-bold">${{ product.price }}</p>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+
+    </div>
+{% endblock %}

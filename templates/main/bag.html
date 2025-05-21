@@ -1,0 +1,75 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="container">
+        <div class="row">
+            <div class="col-8 pt-2 p-5 text-white">
+                <h6 class="mb-5 fw-semibold text-black">HOME DELIVERY</h6>
+                <div class="border rounded-4 border-1 border-secondary">
+                    {% for item in cart_items %}
+                    <div class="m-3 d-flex flex-row">
+                        <img class="rounded-4" height="150" src="{{ item.product.imgUrl.url }}" alt="">
+                        <div class="ms-3 d-flex flex-column">
+                            <label class="fw-semibold text-black">{{ item.product.name }}</label>
+                            <div class="mt-auto d-flex flex-column">
+                                <label class="fw-semibold text-black">Colour: Black</label>
+                                <label class="fw-semibold text-black">Quantity: {{ item.quantity }}</label>
+                            </div>
+                        </div>
+                        <div class="ms-auto d-flex flex-column">
+                            <div>
+                                <a class="text-secondary" href="">EDIT</a>
+                                <a href="{% url 'remove_from_bag' item.product.id %}" class="fw-semibold text-decoration-none text-black">X</a>
+                            </div>
+                            <div class="mt-auto">
+                                <label class="fw-semibold text-black">$ {{item.product.price}}</label>
+                            </div>
+                        </div>
+                    </div>
+                    {% empty %}    
+                        <p class="m-2 fw-bold text-black" >Cart empty.</p>
+                    {% endfor %}
+                    <hr class="text-black m-1">
+                    <label style="font-size: 12px" class="ms-3 mb-2 text-black fw-semibold">Estimated delivery date is
+                        5/21/2025.</label>
+                    <hr class="text-black m-1">
+                    <button style="font-size: 12px" class="ms-3 fw-semibold mb-2 rounded-2 border border-0 ">Pick up in
+                        Boutique
+                    </button>
+                </div>
+            </div>
+            <div class="col-4 p-3">
+                <div class="d-flex flex-column ps-5 pe-5">
+                    <h6 class="mb-4">ORDER SUMMARY</h6>
+                    <hr class="mt-3 mb-3">
+                    <div class="d-flex flex-row">
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-2">Subtotal</p>
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-auto">$ {{ total_sum}}</p>
+                    </div>
+                    <hr class="mt-3 mb-3">
+                    <div class="d-flex flex-row">
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-2">Shipping</p>
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-auto">Free</p>
+                    </div>
+                    <hr class="mt-3 mb-3">
+                    <div class="d-flex flex-row">
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-2">Est. Sales Tax</p>
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-auto">To be calculated</p>
+                    </div>
+                    <hr class="mt-3 mb-3">
+                    <div class="d-flex flex-row">
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-2">Total (incl. tax)</p>
+                        <p style="font-size: 12px" class="fw-semibold m-0 ms-auto">$ {{ total_sum}}</p>
+                    </div>
+                    <hr class="mt-3 mb-3">
+                    <div class="input-group" style="max-width: 300px;">
+                        <input type="text" class="form-control" placeholder="Promo Code" aria-label="Promo Code">
+                        <button class="btn btn-outline-secondary" type="button">APPLY</button>
+                    </div>
+                    <button class="bg-black border border-0 text-white fw-semibold fs-6 rounded-4 mt-3 mb-3 p-3 pt-2 pb-2">CONTINUE</button>
+                </div>
+            </div>
+        </div>
+    </div>
+{% endblock %}

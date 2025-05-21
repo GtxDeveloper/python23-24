@@ -1,0 +1,67 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+    <div class="d-flex flex-column align-items-center pt-2 ps-5 pe-5 pb-2">
+        <div class="mb-4" style="position: relative">
+            <img class="rounded-4 d-block" src="{% static 'main/img/bigSneakersTop.jpg' %}" alt="">
+            <div class="text-white text-center" style="position: absolute; top: 80%; left: 42%;">
+                <label class="fw-bold fs-6 mb-1">NEW ARRIVALS</label>
+                <p class="fw-medium mb-3">Introducing the sprinter shoe</p>
+                <div class="d-flex flex-row mt-2 me-5 ms-5">
+                    <div style="backdrop-filter: blur(8px)"
+                         class="border-white rounded-3 border border-2 p-1  ps-2 pe-2 me-4">
+                        <a class="text-decoration-none text-white" href="/women">Women</a>
+                    </div>
+                    <div style="backdrop-filter: blur(8px)"
+                         class="border-white rounded-3 border border-2 p-1 ps-2 pe-2 ms-4">
+                        <a class="text-decoration-none text-white" href="/men">Man</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="mt-4 d-flex flex-row">
+            <div style="position: relative" class=" me-1">
+                <img class="rounded-4" src="{% static 'main/img/smallSneakersLeft.png' %}" alt="">
+                <div class="border border-white border-2 rounded-3 p-1 ps-2 pe-2"
+                     style="position: absolute; top: 90%; left: 40%;backdrop-filter: blur(8px)">
+                    <a class="text-decoration-none text-white" href="/women">Women</a>
+                </div>
+                <div class="border border-white border-2 rounded-3 p-1 ps-2 pe-2"
+                     style="position: absolute; top: 90%; left: 55%; backdrop-filter: blur(8px)">
+                    <a class="text-decoration-none text-white" href="/men">Men</a>
+                </div>
+            </div>
+            <div style="position: relative" class=" ms-1">
+                <img class="rounded-4" src="{% static 'main/img/smallSneakersRight.png' %}" alt="">
+                <div class="border border-white border-2 rounded-3 p-1 ps-2 pe-2"
+                     style="position: absolute; top: 90%; left: 40%;backdrop-filter: blur(8px)">
+                    <a class="text-decoration-none text-white" href="/women">Women</a>
+                </div>
+                <div class="border border-white border-2 rounded-3 p-1 ps-2 pe-2"
+                     style="position: absolute; top: 90%; left: 55%; backdrop-filter: blur(8px)">
+                    <a class="text-decoration-none text-white" href="/men">Men</a>
+                </div>
+            </div>
+        </div>
+        <div class="mt-5 mb-4" style="position: relative">
+            <img class="rounded-4 d-block" src="{% static 'main/img/bigClothesBottom.png' %}" alt="">
+            <div class="text-white text-center" style="position: absolute; top: 81%; left: 40%;">
+                <label class="fw-bold fs-6 mb-1">NEW ARRIVALS</label>
+                <p class="fw-medium mb-3">Introducing the sprinter shoe</p>
+                <div class="d-flex flex-row mt-2 me-5 ms-5">
+                    <div style="backdrop-filter: blur(8px)"
+                         class="border-white rounded-3 border border-2 p-1  ps-3 pe-3 me-1">
+                        <a class="text-decoration-none text-white" href="/women">Women</a>
+                    </div>
+                    <div style="backdrop-filter: blur(8px)"
+                         class="border-white rounded-3 border border-2 p-1 ps-3 pe-3 ms-4">
+                        <a class="text-decoration-none text-white" href="/men">Man</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+{% endblock %}

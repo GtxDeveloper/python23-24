@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <div class="container d-flex flex-column align-items-center">
+        <h2 class="mb-4 text-center"> Топ проданих товарів</h2>
+        <div class="text-center mb-5">
+            <img src="{{ chart }}" alt="Top Products Chart" class="img-fluid rounded shadow">
+        </div>
+        <a href="{{ chart }}" download="top_products_chart.png" class="btn btn-primary">Завантажити графік (PNG)</a>
+        <h3 class="mb-3">Таблиця продаж</h3>
+        <div class="table-responsive w-100">
+            {{ table|safe }}
+        </div>
+
+        <a href="{{ excel_file_url }}" download="sales_data.xlsx" class="btn btn-success">Завантажити (Excel)</a>
+    </div>
+{% endblock %}

@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>{% block title %}Maison Landik{% endblock %}</title>
+    {% load static %}
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'main/css/style.css' %}">
+</head>
+<body>
+
+<header class="d-flex m-2 align-items-center">
+    <div class="d-flex bg-secondary rounded-4 m-2 flex-grow-1">
+        <div class="border-secondary m-3 ">
+            <a class="text-decoration-none fw-medium text-black" href="/women">Women</a>
+        </div>
+        <div class="border-secondary m-3 ">
+            <a class="text-decoration-none fw-medium text-black" href="/men">Men</a>
+        </div>
+        <div class="border-secondary m-3 ">
+            <a class="text-decoration-none fw-medium text-black" href="/unisex/">Unisex</a>
+        </div>
+        <a class="ms-auto m-2 me-5" href="/">
+            <img src="{% static 'main/img/siteLogo.png' %}" height="40" alt="">
+        </a>
+        <div class="d-flex ms-auto">
+            <div class="border-secondary m-3 ">
+                <a class="text-decoration-none fw-medium text-danger-emphasis" href="/admin">Admin</a>
+            </div>
+            <div class="border-secondary m-3 ">
+                <a class="text-decoration-none fw-medium text-danger-emphasis" href="/statistics">Statistics</a>
+            </div>
+            <div class="border-secondary m-3">
+                <a class="text-decoration-none fw-medium text-black" href="/bag/">Bag</a>
+            </div>
+        </div>
+    </div>
+</header>
+
+
+<main>
+    {% block content %}
+
+    {% endblock %}
+</main>
+
+<footer class="d-flex flex-column justify-content-center align-items-center">
+    <div class="w-50 mb-5 text-center">Maison Landik is a Poltava haute couture house founded on
+        ideas of nonconformity and the subversion of norms. Entrenched
+        in the unconventional, a dynamic wardrobe proposal redefines
+        shared codes in a vibrant interplay between memory and bold
+        imagination. The Maison is devoted to uncompromising creativity
+        invigorated by authenticity, radicality and self-expression.
+    </div>
+    <div class="d-flex mb-5 flex-column justify-content-center align-items-center">
+        <h6>RECEIVE THE NEWSLETTER</h6>
+        <form class="m-2">
+            <div class="input-group">
+                <input type="email" class="form-control" placeholder="Email address" aria-label="Email address">
+                <button class="btn btn-outline-secondary" type="submit">
+                    Submit ✓
+                </button>
+            </div>
+        </form>
+        <p>Stay up-to-date the new collections, events and exclusive content</p>
+    </div>
+    <p>Copyright &copy; 2025 StudentSite Landyk N.E.</p>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
